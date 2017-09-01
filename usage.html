@@ -51,6 +51,32 @@ and is compatible with Python <strong>3.3</strong> and higher.</p>
 </div>
 <div class="section" id="api">
 <h2>API<a class="headerlink" href="#api" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="configuration">
+<h3>Configuration<a class="headerlink" href="#configuration" title="Permalink to this headline">¶</a></h3>
+<dl class="function">
+<dt id="ui.setup">
+<code class="descclassname">ui.</code><code class="descname">setup</code><span class="sig-paren">(</span><em>*</em>, <em>verbose=False</em>, <em>quiet=False</em>, <em>color='auto'</em>, <em>title='auto'</em>, <em>timestamp=False</em><span class="sig-paren">)</span><a class="headerlink" href="#ui.setup" title="Permalink to this definition">¶</a></dt>
+<dd><p>Configure behavior of message functions.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>verbose</strong> – Whether <a class="reference internal" href="#ui.debug" title="ui.debug"><code class="xref py py-func docutils literal"><span class="pre">debug()</span></code></a> messages should get printed</li>
+<li><strong>quiet</strong> – Hide every message except <a class="reference internal" href="#ui.warning" title="ui.warning"><code class="xref py py-func docutils literal"><span class="pre">warning()</span></code></a>, <a class="reference internal" href="#ui.error" title="ui.error"><code class="xref py py-func docutils literal"><span class="pre">error()</span></code></a>, and
+<a class="reference internal" href="#ui.fatal" title="ui.fatal"><code class="xref py py-func docutils literal"><span class="pre">fatal()</span></code></a></li>
+<li><strong>color</strong> – Choices: ‘auto’, ‘always’, or ‘never’. Whether to color output.
+By default (‘auto’), only use color when output is a terminal.</li>
+<li><strong>title</strong> – Ditto for setting terminal title</li>
+<li><strong>timestamp</strong> – Whether to prefix every message with a time stamp</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
 <div class="section" id="constants">
 <h3>Constants<a class="headerlink" href="#constants" title="Permalink to this headline">¶</a></h3>
 <p>You can use any of these constants as a <code class="docutils literal"><span class="pre">token</span></code> in the following functions:</p>
@@ -372,6 +398,37 @@ Did you mean: John?
 
 </div>
 </div>
+<div class="section" id="testing-with-pytest">
+<span id="pytest"></span><h2>Testing with pytest<a class="headerlink" href="#testing-with-pytest" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="ui.tests.conftest.message_recorder">
+<code class="descclassname">ui.tests.conftest.</code><code class="descname">message_recorder</code><span class="sig-paren">(</span><em>request</em><span class="sig-paren">)</span><a class="headerlink" href="#ui.tests.conftest.message_recorder" title="Permalink to this definition">¶</a></dt>
+<dd><p>Start recording messages</p>
+<p><em>Methods</em></p>
+<ul class="simple">
+<li><cite>stop()</cite>: stop recording</li>
+<li><cite>reset()</cite>: clear the list of recorded messages.</li>
+<li><dl class="first docutils">
+<dt><cite>find(regex)</cite> find a message in the list matching the given regular</dt>
+<dd>expression</dd>
+</dl>
+</li>
+</ul>
+</dd></dl>
+
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ui.tests.conftest</span> <span class="k">import</span> <span class="n">message_recorder</span>
+
+
+<span class="k">def</span> <span class="nf">foo</span><span class="p">():</span>
+    <span class="n">ui</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Fooing&quot;</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">test_foo</span><span class="p">(</span><span class="n">message_recorder</span><span class="p">):</span>
+     <span class="n">foo</span><span class="p">()</span>
+     <span class="k">assert</span> <span class="n">message_recorder</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;Fooing&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
 </div>
 
 
@@ -385,6 +442,7 @@ Did you mean: John?
 <li><a class="reference internal" href="#">Usage</a><ul>
 <li><a class="reference internal" href="#requirements">Requirements</a></li>
 <li><a class="reference internal" href="#api">API</a><ul>
+<li><a class="reference internal" href="#configuration">Configuration</a></li>
 <li><a class="reference internal" href="#constants">Constants</a></li>
 <li><a class="reference internal" href="#informative-messages">Informative messages</a></li>
 <li><a class="reference internal" href="#error-messages">Error messages</a></li>
@@ -394,6 +452,7 @@ Did you mean: John?
 <li><a class="reference internal" href="#misc">Misc</a></li>
 </ul>
 </li>
+<li><a class="reference internal" href="#testing-with-pytest">Testing with pytest</a></li>
 </ul>
 </li>
 </ul>
