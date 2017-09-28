@@ -48,6 +48,11 @@
 and is compatible with Python <strong>3.3</strong> and higher.</p>
 <p>It depends on <code class="docutils literal"><span class="pre">colorama</span></code> and <code class="docutils literal"><span class="pre">unidecode</span></code> for Windows support, and on
 <code class="docutils literal"><span class="pre">tabulate</span></code> for the <a class="reference internal" href="#ui.info_table" title="ui.info_table"><code class="xref py py-func docutils literal"><span class="pre">info_table()</span></code></a> function.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The name of the Pypi package is <code class="docutils literal"><span class="pre">python-cli-ui</span></code>, but after you
+install it, you should use <code class="docutils literal"><span class="pre">import</span> <span class="pre">ui</span></code> to use it.</p>
+</div>
 </div>
 <div class="section" id="api">
 <h2>API<a class="headerlink" href="#api" title="Permalink to this headline">¶</a></h2>
@@ -76,6 +81,13 @@ By default (‘auto’), only use color when output is a terminal.</li>
 </table>
 </dd></dl>
 
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ui</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;this will not be printed&quot;</span><span class="p">)</span>
+<span class="go">&lt;nothing&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ui</span><span class="o">.</span><span class="n">setup</span><span class="p">(</span><span class="n">verbose</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ui</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;this will be printed&quot;</span><span class="p">)</span>
+<span class="go">this will be printed</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="constants">
 <h3>Constants<a class="headerlink" href="#constants" title="Permalink to this headline">¶</a></h3>
@@ -158,6 +170,7 @@ By default (‘auto’), only use color when output is a terminal.</li>
 </tbody>
 </table>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ui</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;this is&quot;</span><span class="p">,</span> <span class="n">ui</span><span class="o">.</span><span class="n">red</span><span class="p">,</span> <span class="s2">&quot;red&quot;</span><span class="p">)</span>
+<span class="go">This is red</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -182,18 +195,30 @@ By default (‘auto’), only use color when output is a terminal.</li>
 <dt id="ui.info_1">
 <code class="descclassname">ui.</code><code class="descname">info_1</code><span class="sig-paren">(</span><em>*tokens</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ui.info_1" title="Permalink to this definition">¶</a></dt>
 <dd><p>Print an important informative message</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ui</span><span class="o">.</span><span class="n">info_1</span><span class="p">(</span><span class="s2">&quot;Message&quot;</span><span class="p">)</span>
+<span class="go">:: Message</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="function">
 <dt id="ui.info_2">
 <code class="descclassname">ui.</code><code class="descname">info_2</code><span class="sig-paren">(</span><em>*tokens</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ui.info_2" title="Permalink to this definition">¶</a></dt>
 <dd><p>Print an not so important informative message</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ui</span><span class="o">.</span><span class="n">info_2</span><span class="p">(</span><span class="s2">&quot;Message&quot;</span><span class="p">)</span>
+<span class="go">=&gt; Message</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="function">
 <dt id="ui.info_3">
 <code class="descclassname">ui.</code><code class="descname">info_3</code><span class="sig-paren">(</span><em>*tokens</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ui.info_3" title="Permalink to this definition">¶</a></dt>
 <dd><p>Print an even less important informative message</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ui</span><span class="o">.</span><span class="n">info_3</span><span class="p">(</span><span class="s2">&quot;Message&quot;</span><span class="p">)</span>
+<span class="go">* Message</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="function">
@@ -201,6 +226,10 @@ By default (‘auto’), only use color when output is a terminal.</li>
 <code class="descclassname">ui.</code><code class="descname">debug</code><span class="sig-paren">(</span><em>*tokens</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ui.debug" title="Permalink to this definition">¶</a></dt>
 <dd><p>Print a debug message.</p>
 <p>Messages are shown only when <code class="docutils literal"><span class="pre">CONFIG[&quot;verbose&quot;]</span></code> is true</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ui</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;Message&quot;</span><span class="p">)</span>
+<span class="go">&lt;nothing&gt;</span>
+</pre></div>
+</div>
 </dd></dl>
 
 </div>
@@ -211,18 +240,31 @@ By default (‘auto’), only use color when output is a terminal.</li>
 <dt id="ui.error">
 <code class="descclassname">ui.</code><code class="descname">error</code><span class="sig-paren">(</span><em>*tokens</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ui.error" title="Permalink to this definition">¶</a></dt>
 <dd><p>Print an error message</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ui</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s2">&quot;Message&quot;</span><span class="p">)</span>
+<span class="go">Error: message</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="function">
 <dt id="ui.warning">
 <code class="descclassname">ui.</code><code class="descname">warning</code><span class="sig-paren">(</span><em>*tokens</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ui.warning" title="Permalink to this definition">¶</a></dt>
 <dd><p>Print a warning message</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ui</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s2">&quot;Message&quot;</span><span class="p">)</span>
+<span class="go">Warning: message</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="function">
 <dt id="ui.fatal">
 <code class="descclassname">ui.</code><code class="descname">fatal</code><span class="sig-paren">(</span><em>*tokens</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ui.fatal" title="Permalink to this definition">¶</a></dt>
-<dd><p>Print an error message and calls <code class="docutils literal"><span class="pre">sys.exit</span></code></p>
+<dd><p>Print an error message and call <code class="docutils literal"><span class="pre">sys.exit</span></code></p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ui</span><span class="o">.</span><span class="n">fatal</span><span class="p">(</span><span class="s2">&quot;Message&quot;</span><span class="p">)</span>
+<span class="go">Error: message</span>
+<span class="go">exit()</span>
+</pre></div>
+</div>
 </dd></dl>
 
 </div>
@@ -242,6 +284,13 @@ knowledge.</p>
 </tr>
 </tbody>
 </table>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="ow">in</span> <span class="ow">in</span> <span class="n">rang</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">):</span>
+<span class="gp">&gt;&gt;&gt; </span>    <span class="n">ui</span><span class="o">.</span><span class="n">dot</span><span class="p">()</span>
+<span class="go">....&lt;no newline&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ui</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">last</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="go">.....</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="function">
@@ -262,8 +311,8 @@ knowledge.</p>
 </tr>
 </tbody>
 </table>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ui</span><span class="o">.</span><span class="n">info_count</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">12</span><span class="p">)</span>
-<span class="go">* ( 5/12)</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ui</span><span class="o">.</span><span class="n">info_count</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="n">message</span><span class="p">)</span>
+<span class="go">* ( 5/12) message</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -313,9 +362,11 @@ knowledge.</p>
 <dt id="ui.indent">
 <code class="descclassname">ui.</code><code class="descname">indent</code><span class="sig-paren">(</span><em>text</em>, <em>num=2</em><span class="sig-paren">)</span><a class="headerlink" href="#ui.indent" title="Permalink to this definition">¶</a></dt>
 <dd><p>Indent a piece of text.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ui</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;John said:&quot;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">ui</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="n">ui</span><span class="o">.</span><span class="n">indent</span><span class="p">(</span><span class="s2">&quot;First, we take Manhattan.</span><span class="se">\n</span><span class="s2">Then we take Berlin!&quot;</span><span class="p">)</span>
-
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">quote</span> <span class="o">=</span> <span class="p">(</span>
+<span class="go">      &quot;First, we take Manhattan\n&quot;</span>
+<span class="go">      &quot;Then we take Berlin!&quot;</span>
+<span class="go">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ui</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;John said:&quot;</span><span class="p">,</span> <span class="n">ui</span><span class="o">.</span><span class="n">indent</span><span class="p">(</span><span class="n">quote</span><span class="p">))</span>
 <span class="go">John said:</span>
 <span class="go">   First, we take Manhattan.</span>
 <span class="go">   Then we take Berlin!</span>
@@ -353,8 +404,14 @@ knowledge.</p>
 <dl class="function">
 <dt id="ui.ask_string">
 <code class="descclassname">ui.</code><code class="descname">ask_string</code><span class="sig-paren">(</span><em>question</em>, <em>default=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ui.ask_string" title="Permalink to this definition">¶</a></dt>
-<dd><p>Ask the user to enter something.</p>
-<p>Returns what the user entered</p>
+<dd><p>Ask the user to enter a string.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">name</span> <span class="o">=</span> <span class="n">ui</span><span class="o">.</span><span class="n">ask_string</span><span class="p">(</span><span class="s2">&quot;Enter your name&quot;</span><span class="p">)</span>
+<span class="go">:: Enter your name</span>
+<span class="go">&lt;john&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">name</span>
+<span class="go">&#39;john&#39;</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="function">
@@ -382,14 +439,28 @@ the identity function.</p>
 </dd>
 </dl>
 <p>In the last two cases, None will be returned</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">choices</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;apple&quot;</span><span class="p">,</span> <span class="s2">&quot;banana&quot;</span><span class="p">,</span> <span class="s2">&quot;orange&quot;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">fruit</span> <span class="o">=</span> <span class="n">ui</span><span class="o">.</span><span class="n">ask_choice</span><span class="p">(</span><span class="s2">&quot;Select a fruit&quot;</span><span class="p">,</span> <span class="n">choices</span><span class="p">)</span>
+<span class="go">:: Select a fruit</span>
+<span class="go">  1 apple</span>
+<span class="go">  2 banana</span>
+<span class="go">  3 orange</span>
+<span class="go">&lt;2&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">fruit</span>
+<span class="go">&#39;banana&#39;</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="function">
 <dt id="ui.ask_yes_no">
 <code class="descclassname">ui.</code><code class="descname">ask_yes_no</code><span class="sig-paren">(</span><em>question</em>, <em>default=False</em><span class="sig-paren">)</span><a class="headerlink" href="#ui.ask_yes_no" title="Permalink to this definition">¶</a></dt>
 <dd><p>Ask the user to answer by yes or no</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ui</span><span class="o">.</span><span class="n">ask_yes_no</span><span class="p">(</span><span class="s2">&quot;With cream?&quot;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">with_cream</span> <span class="o">=</span> <span class="n">ui</span><span class="o">.</span><span class="n">ask_yes_no</span><span class="p">(</span><span class="s2">&quot;With cream?&quot;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 <span class="go">:: With cream? (y/N)</span>
+<span class="go">&lt;y&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">with_cream</span>
+<span class="go">True</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -409,6 +480,7 @@ the identity function.</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="k">with</span> <span class="n">ui</span><span class="o">.</span><span class="n">Timer</span><span class="p">(</span><span class="s2">&quot;something&quot;</span><span class="p">):</span>
 <span class="go">        foo()</span>
 <span class="go">        bar()</span>
+<span class="go">* Something took 0h 3m 10s 430ms</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -418,13 +490,20 @@ the identity function.</p>
 <code class="descclassname">ui.</code><code class="descname">did_you_mean</code><span class="sig-paren">(</span><em>message</em>, <em>user_input</em>, <em>choices</em><span class="sig-paren">)</span><a class="headerlink" href="#ui.did_you_mean" title="Permalink to this definition">¶</a></dt>
 <dd><p>Given a list of choices and an invalid user input, display the closest
 items in the list that match the input.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">user_input</span> <span class="o">=</span> <span class="s2">&quot;Joohn&quot;</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">names</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Alice&quot;</span><span class="p">,</span> <span class="s2">&quot;John&quot;</span><span class="p">,</span> <span class="s2">&quot;Bob&quot;</span><span class="p">]</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">ui</span><span class="o">.</span><span class="n">did_you_mean</span><span class="p">(</span><span class="s2">&quot;Invalid name: </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">user_input</span><span class="p">,</span> <span class="n">user_input</span><span class="p">,</span> <span class="n">choices</span><span class="p">)</span>
-<span class="go">Invalid name: Joohn</span>
+<blockquote>
+<div><div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">allowed_names</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Alice&quot;</span><span class="p">,</span> <span class="s2">&quot;John&quot;</span><span class="p">,</span> <span class="s2">&quot;Bob&quot;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">name</span> <span class="o">=</span> <span class="n">ui</span><span class="o">.</span><span class="n">ask_string</span><span class="p">(</span><span class="s2">&quot;Enter a name&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">if</span> <span class="ow">not</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">allowed_names</span><span class="p">:</span>
+<span class="gp">&gt;&gt;&gt; </span>      <span class="n">ui</span><span class="o">.</span><span class="n">did_you_mean</span><span class="p">(</span><span class="s2">&quot;Invalid name&quot;</span><span class="p">,</span> <span class="n">user_input</span><span class="p">,</span> <span class="n">choices</span><span class="p">)</span>
+<span class="go">:: Enter a name</span>
+<span class="go">&lt;Joohn&gt;</span>
+<span class="go">Invalid name.</span>
 <span class="go">Did you mean: John?</span>
 </pre></div>
 </div>
+</div></blockquote>
+<p>Note: if the list of possible choices is short, consider using
+<a class="reference internal" href="#ui.ask_choice" title="ui.ask_choice"><code class="xref py py-func docutils literal"><span class="pre">ask_choice()</span></code></a> instead.</p>
 </dd></dl>
 
 </div>
