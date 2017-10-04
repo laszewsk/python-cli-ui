@@ -132,7 +132,7 @@ By default (‘auto’), only use color when output is a terminal.</li>
 <li><code class="docutils literal"><span class="pre">cross</span></code>: ❌ (red, replaced by ‘ko’ on Windows)</li>
 <li><code class="docutils literal"><span class="pre">ellipsis</span></code>:  … (no color, replaced by ‘…’ on Windows)</li>
 </ul>
-<p>You can create your own sequences using <a class="reference internal" href="#ui.UnicodeSequence" title="ui.UnicodeSequence"><code class="xref py py-class docutils literal"><span class="pre">UnicodeSequence</span></code></a>:</p>
+<p>You can create your own colored sequences using <a class="reference internal" href="#ui.UnicodeSequence" title="ui.UnicodeSequence"><code class="xref py py-class docutils literal"><span class="pre">UnicodeSequence</span></code></a>:</p>
 </li>
 </ul>
 <dl class="class">
@@ -143,6 +143,19 @@ By default (‘auto’), only use color when output is a terminal.</li>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ui</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="n">up_arrow</span><span class="p">,</span> <span class="s2">&quot;2 commits&quot;</span><span class="p">)</span>
 <span class="go">↑ 2 commits # on Linux</span>
 <span class="go">+ 2 commits # on Windows</span>
+</pre></div>
+</div>
+<p>Alternatively, if you do not want to force a color, you can use
+<a class="reference internal" href="#ui.Symbol" title="ui.Symbol"><code class="xref py py-class docutils literal"><span class="pre">Symbol</span></code></a>:</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="ui.Symbol">
+<em class="property">class </em><code class="descclassname">ui.</code><code class="descname">Symbol</code><span class="sig-paren">(</span><em>as_unicode</em>, <em>as_ascii</em><span class="sig-paren">)</span><a class="headerlink" href="#ui.Symbol" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">heart</span> <span class="o">=</span> <span class="n">ui</span><span class="o">.</span><span class="n">Symbol</span><span class="p">(</span><span class="s2">&quot;❤&quot;</span><span class="p">,</span> <span class="s2">&quot;&lt;3&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ui</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Thanks for using python-cli-ui&quot;</span><span class="p">,</span> <span class="n">heart</span><span class="p">)</span>
+<span class="go">Thanks for using python-cli-ui ❤  # on Linux</span>
+<span class="go">Thanks for using python-cli-ui &lt;3  # on Windows</span>
 </pre></div>
 </div>
 </dd></dl>
