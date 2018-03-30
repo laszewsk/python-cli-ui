@@ -9,7 +9,7 @@ Installation
 -------------
 
 ``python-cli-ui`` is available on `Pypi <https://pypi.org/project/python-cli-ui/>`_
-and is compatible with Python **3.3** and higher.
+and is compatible with Python **3.4** and higher.
 
 It depends on ``colorama`` and ``unidecode`` for Windows support, and on
 ``tabulate`` for the :func:`info_table` function.
@@ -69,6 +69,8 @@ You can use any of these constants as a ``token`` in the following functions:
   * ``turquoise``
   * ``white``
   * ``yellow``
+
+.. note:: Each of these constants is an instance of :class:`Color`.
 
 * Sequence of Unicode characters:
 
@@ -295,6 +297,16 @@ Asking for user input
          >>> with_cream
          True
 
+.. autofunction:: read_password
+.. autofunction:: ask_password
+
+  ::
+
+      >>> fav_food = ui.ask_password("Guilty pleasure?")
+      :: Guilty pleasure?
+
+      >>> fav_food
+      'chocolate'
 
 Displaying duration
 +++++++++++++++++++
@@ -360,6 +372,28 @@ Testing with pytest
 Changelog
 -----------
 
+v0.7.1
+++++++
+
+* Fix crash in ``ask_password`` when password was empty.
+* Let the ``KeyboardInterrput`` exception propagate back to the caller instead of catching
+  it ourselves and returning ``None``. Reported by Théo Delrieu.
+
+v0.7.0
+++++++
+
+* Add ``ask_password`` and ``read_pasword``. Patch by @drazisil
+
+v0.6.1
+++++++
+
+* Fix metadata (owner moved from TankerApp to SuperTanker)
+
+v0.6.0
+++++++
+
+* Export ``Color`` class.
+
 v0.5.0
 ++++++
 
@@ -377,7 +411,7 @@ v0.3.0
 * Add ``info_section``
 
 * Cosmetic changes about prefixes for ``debug``, ``warn`` and ``error``
-  messages. (See `#6 <https://github.com/TankerApp/python-cli-ui/pull/6>`_
+  messages. (See `#6 <https://github.com/SuperTanker/python-cli-ui/pull/6>`_
   for the details)
 
 
