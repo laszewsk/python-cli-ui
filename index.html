@@ -6,16 +6,16 @@
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Python CLI UI &#8212; python-cli-ui 0.1.0 documentation</title>
+    <title>Python CLI UI &#8212; cli_ui 0.1.0 documentation</title>
     <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Changelog" href="changelog.html" />
    
   <link rel="stylesheet" href="_static/custom.css" type="text/css" />
   
@@ -32,37 +32,56 @@
 
           <div class="body" role="main">
             
-  <div class="section" id="module-ui">
-<span id="python-cli-ui"></span><h1>Python CLI UI<a class="headerlink" href="#module-ui" title="Permalink to this headline">¶</a></h1>
-<p>Tools for nice user interfaces in the terminal.</p>
+  <div class="section" id="python-cli-ui">
+<h1><a class="toc-backref" href="#id1">Python CLI UI</a><a class="headerlink" href="#python-cli-ui" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+</div>
+<span class="target" id="module-cli_ui"></span><p>Tools for nice user interfaces in the terminal.</p>
+<div class="contents topic" id="contents">
+<p class="topic-title first">Contents</p>
+<ul class="simple">
+<li><a class="reference internal" href="#python-cli-ui" id="id1">Python CLI UI</a><ul>
+<li><a class="reference internal" href="#installation" id="id2">Installation</a></li>
+<li><a class="reference internal" href="#api" id="id3">API</a><ul>
+<li><a class="reference internal" href="#configuration" id="id4">Configuration</a></li>
+<li><a class="reference internal" href="#constants" id="id5">Constants</a></li>
+<li><a class="reference internal" href="#informative-messages" id="id6">Informative messages</a></li>
+<li><a class="reference internal" href="#error-messages" id="id7">Error messages</a></li>
+<li><a class="reference internal" href="#progress-messages" id="id8">Progress messages</a></li>
+<li><a class="reference internal" href="#formatting" id="id9">Formatting</a></li>
+<li><a class="reference internal" href="#asking-for-user-input" id="id10">Asking for user input</a></li>
+<li><a class="reference internal" href="#displaying-duration" id="id11">Displaying duration</a></li>
+<li><a class="reference internal" href="#auto-correct" id="id12">Auto-correct</a></li>
+<li><a class="reference internal" href="#testing" id="id13">Testing</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
 <div class="section" id="installation">
-<h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h2>
-<p><code class="docutils literal notranslate"><span class="pre">python-cli-ui</span></code> is available on <a class="reference external" href="https://pypi.org/project/python-cli-ui/">Pypi</a>
+<h2><a class="toc-backref" href="#id2">Installation</a><a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">cli-ui</span></code> is available on <a class="reference external" href="https://pypi.org/project/cli-ui/">Pypi</a>
 and is compatible with Python <strong>3.4</strong> and higher.</p>
 <p>It depends on <code class="docutils literal notranslate"><span class="pre">colorama</span></code> and <code class="docutils literal notranslate"><span class="pre">unidecode</span></code> for Windows support, and on
-<code class="docutils literal notranslate"><span class="pre">tabulate</span></code> for the <a class="reference internal" href="#ui.info_table" title="ui.info_table"><code class="xref py py-func docutils literal notranslate"><span class="pre">info_table()</span></code></a> function.</p>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">The name of the Pypi package is <code class="docutils literal notranslate"><span class="pre">python-cli-ui</span></code>, but after you
-install it, you should use <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">ui</span></code> to use it.</p>
-</div>
+<code class="docutils literal notranslate"><span class="pre">tabulate</span></code> for the <a class="reference internal" href="#cli_ui.info_table" title="cli_ui.info_table"><code class="xref py py-func docutils literal notranslate"><span class="pre">info_table()</span></code></a> function.</p>
 </div>
 <div class="section" id="api">
-<h2>API<a class="headerlink" href="#api" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id3">API</a><a class="headerlink" href="#api" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="configuration">
-<h3>Configuration<a class="headerlink" href="#configuration" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id4">Configuration</a><a class="headerlink" href="#configuration" title="Permalink to this headline">¶</a></h3>
 <dl class="function">
-<dt id="ui.setup">
-<code class="descclassname">ui.</code><code class="descname">setup</code><span class="sig-paren">(</span><em>*</em>, <em>verbose=False</em>, <em>quiet=False</em>, <em>color='auto'</em>, <em>title='auto'</em>, <em>timestamp=False</em><span class="sig-paren">)</span><a class="headerlink" href="#ui.setup" title="Permalink to this definition">¶</a></dt>
+<dt id="cli_ui.setup">
+<code class="descclassname">cli_ui.</code><code class="descname">setup</code><span class="sig-paren">(</span><em>*</em>, <em>verbose: bool = False</em>, <em>quiet: bool = False</em>, <em>color: str = 'auto'</em>, <em>title: str = 'auto'</em>, <em>timestamp: bool = False</em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#cli_ui.setup" title="Permalink to this definition">¶</a></dt>
 <dd><p>Configure behavior of message functions.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>verbose</strong> – Whether <a class="reference internal" href="#ui.debug" title="ui.debug"><code class="xref py py-func docutils literal notranslate"><span class="pre">debug()</span></code></a> messages should get printed</li>
-<li><strong>quiet</strong> – Hide every message except <a class="reference internal" href="#ui.warning" title="ui.warning"><code class="xref py py-func docutils literal notranslate"><span class="pre">warning()</span></code></a>, <a class="reference internal" href="#ui.error" title="ui.error"><code class="xref py py-func docutils literal notranslate"><span class="pre">error()</span></code></a>, and
-<a class="reference internal" href="#ui.fatal" title="ui.fatal"><code class="xref py py-func docutils literal notranslate"><span class="pre">fatal()</span></code></a></li>
+<li><strong>verbose</strong> – Whether <a class="reference internal" href="#cli_ui.debug" title="cli_ui.debug"><code class="xref py py-func docutils literal notranslate"><span class="pre">debug()</span></code></a> messages should get printed</li>
+<li><strong>quiet</strong> – Hide every message except <a class="reference internal" href="#cli_ui.warning" title="cli_ui.warning"><code class="xref py py-func docutils literal notranslate"><span class="pre">warning()</span></code></a>, <a class="reference internal" href="#cli_ui.error" title="cli_ui.error"><code class="xref py py-func docutils literal notranslate"><span class="pre">error()</span></code></a>, and
+<a class="reference internal" href="#cli_ui.fatal" title="cli_ui.fatal"><code class="xref py py-func docutils literal notranslate"><span class="pre">fatal()</span></code></a></li>
 <li><strong>color</strong> – Choices: ‘auto’, ‘always’, or ‘never’. Whether to color output.
 By default (‘auto’), only use color when output is a terminal.</li>
 <li><strong>title</strong> – Ditto for setting terminal title</li>
@@ -74,16 +93,16 @@ By default (‘auto’), only use color when output is a terminal.</li>
 </table>
 </dd></dl>
 
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ui</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;this will not be printed&quot;</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">cli_ui</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;this will not be printed&quot;</span><span class="p">)</span>
 <span class="go">&lt;nothing&gt;</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">ui</span><span class="o">.</span><span class="n">setup</span><span class="p">(</span><span class="n">verbose</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">ui</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;this will be printed&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cli_ui</span><span class="o">.</span><span class="n">setup</span><span class="p">(</span><span class="n">verbose</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cli_ui</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;this will be printed&quot;</span><span class="p">)</span>
 <span class="go">this will be printed</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="constants">
-<h3>Constants<a class="headerlink" href="#constants" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id5">Constants</a><a class="headerlink" href="#constants" title="Permalink to this headline">¶</a></h3>
 <p>You can use any of these constants as a <code class="docutils literal notranslate"><span class="pre">token</span></code> in the following functions:</p>
 <ul class="simple">
 <li>Effects:<ul>
@@ -129,47 +148,47 @@ By default (‘auto’), only use color when output is a terminal.</li>
 <li><code class="docutils literal notranslate"><span class="pre">cross</span></code>: ❌ (red, replaced by ‘ko’ on Windows)</li>
 <li><code class="docutils literal notranslate"><span class="pre">ellipsis</span></code>:  … (no color, replaced by ‘…’ on Windows)</li>
 </ul>
-<p>You can create your own colored sequences using <a class="reference internal" href="#ui.UnicodeSequence" title="ui.UnicodeSequence"><code class="xref py py-class docutils literal notranslate"><span class="pre">UnicodeSequence</span></code></a>:</p>
+<p>You can create your own colored sequences using <a class="reference internal" href="#cli_ui.UnicodeSequence" title="cli_ui.UnicodeSequence"><code class="xref py py-class docutils literal notranslate"><span class="pre">UnicodeSequence</span></code></a>:</p>
 </li>
 </ul>
 <dl class="class">
-<dt id="ui.UnicodeSequence">
-<em class="property">class </em><code class="descclassname">ui.</code><code class="descname">UnicodeSequence</code><span class="sig-paren">(</span><em>color</em>, <em>as_unicode</em>, <em>as_ascii</em><span class="sig-paren">)</span><a class="headerlink" href="#ui.UnicodeSequence" title="Permalink to this definition">¶</a></dt>
+<dt id="cli_ui.UnicodeSequence">
+<em class="property">class </em><code class="descclassname">cli_ui.</code><code class="descname">UnicodeSequence</code><span class="sig-paren">(</span><em>color: cli_ui.Color</em>, <em>as_unicode: str</em>, <em>as_ascii: str</em><span class="sig-paren">)</span><a class="headerlink" href="#cli_ui.UnicodeSequence" title="Permalink to this definition">¶</a></dt>
 <dd><p>Represent a sequence containing a color followed by a Unicode symbol</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">up_arrow</span> <span class="o">=</span> <span class="n">ui</span><span class="o">.</span><span class="n">UnicodeSequence</span><span class="p">(</span><span class="n">ui</span><span class="o">.</span><span class="n">blue</span><span class="p">,</span> <span class="s2">&quot;↑&quot;</span><span class="p">,</span> <span class="s2">&quot;+&quot;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">ui</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="n">up_arrow</span><span class="p">,</span> <span class="s2">&quot;2 commits&quot;</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">up_arrow</span> <span class="o">=</span> <span class="n">cli_ui</span><span class="o">.</span><span class="n">UnicodeSequence</span><span class="p">(</span><span class="n">cli_ui</span><span class="o">.</span><span class="n">blue</span><span class="p">,</span> <span class="s2">&quot;↑&quot;</span><span class="p">,</span> <span class="s2">&quot;+&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cli_ui</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="n">up_arrow</span><span class="p">,</span> <span class="s2">&quot;2 commits&quot;</span><span class="p">)</span>
 <span class="go">↑ 2 commits # on Linux</span>
 <span class="go">+ 2 commits # on Windows</span>
 </pre></div>
 </div>
 <p>Alternatively, if you do not want to force a color, you can use
-<a class="reference internal" href="#ui.Symbol" title="ui.Symbol"><code class="xref py py-class docutils literal notranslate"><span class="pre">Symbol</span></code></a>:</p>
+<a class="reference internal" href="#cli_ui.Symbol" title="cli_ui.Symbol"><code class="xref py py-class docutils literal notranslate"><span class="pre">Symbol</span></code></a>:</p>
 </dd></dl>
 
 <dl class="class">
-<dt id="ui.Symbol">
-<em class="property">class </em><code class="descclassname">ui.</code><code class="descname">Symbol</code><span class="sig-paren">(</span><em>as_unicode</em>, <em>as_ascii</em><span class="sig-paren">)</span><a class="headerlink" href="#ui.Symbol" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">heart</span> <span class="o">=</span> <span class="n">ui</span><span class="o">.</span><span class="n">Symbol</span><span class="p">(</span><span class="s2">&quot;❤&quot;</span><span class="p">,</span> <span class="s2">&quot;&lt;3&quot;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">ui</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Thanks for using python-cli-ui&quot;</span><span class="p">,</span> <span class="n">heart</span><span class="p">)</span>
-<span class="go">Thanks for using python-cli-ui ❤  # on Linux</span>
-<span class="go">Thanks for using python-cli-ui &lt;3  # on Windows</span>
+<dt id="cli_ui.Symbol">
+<em class="property">class </em><code class="descclassname">cli_ui.</code><code class="descname">Symbol</code><span class="sig-paren">(</span><em>as_unicode: str</em>, <em>as_ascii: str</em><span class="sig-paren">)</span><a class="headerlink" href="#cli_ui.Symbol" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">heart</span> <span class="o">=</span> <span class="n">cli_ui</span><span class="o">.</span><span class="n">Symbol</span><span class="p">(</span><span class="s2">&quot;❤&quot;</span><span class="p">,</span> <span class="s2">&quot;&lt;3&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cli_ui</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Thanks for using cli-ui&quot;</span><span class="p">,</span> <span class="n">heart</span><span class="p">)</span>
+<span class="go">Thanks for using cli-ui ❤  # on Linux</span>
+<span class="go">Thanks for using cli-ui &lt;3  # on Windows</span>
 </pre></div>
 </div>
 </dd></dl>
 
 </div>
 <div class="section" id="informative-messages">
-<h3>Informative messages<a class="headerlink" href="#informative-messages" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id6">Informative messages</a><a class="headerlink" href="#informative-messages" title="Permalink to this headline">¶</a></h3>
 <dl class="function">
-<dt id="ui.info">
-<code class="descclassname">ui.</code><code class="descname">info</code><span class="sig-paren">(</span><em>*tokens</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ui.info" title="Permalink to this definition">¶</a></dt>
+<dt id="cli_ui.info">
+<code class="descclassname">cli_ui.</code><code class="descname">info</code><span class="sig-paren">(</span><em>*tokens</em>, <em>**kwargs</em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#cli_ui.info" title="Permalink to this definition">¶</a></dt>
 <dd><p>Print an informative message</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>tokens</strong> – list of <cite>ui</cite> constants or strings, like <code class="docutils literal notranslate"><span class="pre">(ui.red,</span> <span class="pre">'this</span> <span class="pre">is</span> <span class="pre">an</span> <span class="pre">error')</span></code></li>
+<li><strong>tokens</strong> – list of <cite>ui</cite> constants or strings, like <code class="docutils literal notranslate"><span class="pre">(cli_ui.red,</span> <span class="pre">'this</span> <span class="pre">is</span> <span class="pre">an</span> <span class="pre">error')</span></code></li>
 <li><strong>sep</strong> – separator, defaults to <code class="docutils literal notranslate"><span class="pre">'</span> <span class="pre">'</span></code></li>
 <li><strong>end</strong> – token to place at the end, defaults to <code class="docutils literal notranslate"><span class="pre">'\n'</span></code></li>
 <li><strong>fileobj</strong> – file-like object to print the output, defaults to <code class="docutils literal notranslate"><span class="pre">sys.stdout</span></code></li>
@@ -179,19 +198,19 @@ By default (‘auto’), only use color when output is a terminal.</li>
 </tr>
 </tbody>
 </table>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ui</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;this is&quot;</span><span class="p">,</span> <span class="n">ui</span><span class="o">.</span><span class="n">red</span><span class="p">,</span> <span class="s2">&quot;red&quot;</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">cli_ui</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;this is&quot;</span><span class="p">,</span> <span class="n">cli_ui</span><span class="o">.</span><span class="n">red</span><span class="p">,</span> <span class="s2">&quot;red&quot;</span><span class="p">)</span>
 <span class="go">This is red</span>
 </pre></div>
 </div>
 </dd></dl>
 
-<p>Functions below take the same arguments as the <a class="reference internal" href="#ui.info" title="ui.info"><code class="xref py py-func docutils literal notranslate"><span class="pre">info()</span></code></a> function</p>
+<p>Functions below take the same arguments as the <a class="reference internal" href="#cli_ui.info" title="cli_ui.info"><code class="xref py py-func docutils literal notranslate"><span class="pre">info()</span></code></a> function</p>
 <dl class="function">
-<dt id="ui.info_section">
-<code class="descclassname">ui.</code><code class="descname">info_section</code><span class="sig-paren">(</span><em>*tokens</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ui.info_section" title="Permalink to this definition">¶</a></dt>
+<dt id="cli_ui.info_section">
+<code class="descclassname">cli_ui.</code><code class="descname">info_section</code><span class="sig-paren">(</span><em>*tokens</em>, <em>**kwargs</em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#cli_ui.info_section" title="Permalink to this definition">¶</a></dt>
 <dd><p>Print an underlined section name</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ui</span><span class="o">.</span><span class="n">info_section</span><span class="p">(</span><span class="s2">&quot;Section one&quot;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">ui</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Starting stuff&quot;</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">cli_ui</span><span class="o">.</span><span class="n">info_section</span><span class="p">(</span><span class="s2">&quot;Section one&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cli_ui</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Starting stuff&quot;</span><span class="p">)</span>
 
 <span class="go">Section one</span>
 <span class="go">------------</span>
@@ -202,41 +221,41 @@ By default (‘auto’), only use color when output is a terminal.</li>
 </dd></dl>
 
 <dl class="function">
-<dt id="ui.info_1">
-<code class="descclassname">ui.</code><code class="descname">info_1</code><span class="sig-paren">(</span><em>*tokens</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ui.info_1" title="Permalink to this definition">¶</a></dt>
+<dt id="cli_ui.info_1">
+<code class="descclassname">cli_ui.</code><code class="descname">info_1</code><span class="sig-paren">(</span><em>*tokens</em>, <em>**kwargs</em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#cli_ui.info_1" title="Permalink to this definition">¶</a></dt>
 <dd><p>Print an important informative message</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ui</span><span class="o">.</span><span class="n">info_1</span><span class="p">(</span><span class="s2">&quot;Message&quot;</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">cli_ui</span><span class="o">.</span><span class="n">info_1</span><span class="p">(</span><span class="s2">&quot;Message&quot;</span><span class="p">)</span>
 <span class="go">:: Message</span>
 </pre></div>
 </div>
 </dd></dl>
 
 <dl class="function">
-<dt id="ui.info_2">
-<code class="descclassname">ui.</code><code class="descname">info_2</code><span class="sig-paren">(</span><em>*tokens</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ui.info_2" title="Permalink to this definition">¶</a></dt>
+<dt id="cli_ui.info_2">
+<code class="descclassname">cli_ui.</code><code class="descname">info_2</code><span class="sig-paren">(</span><em>*tokens</em>, <em>**kwargs</em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#cli_ui.info_2" title="Permalink to this definition">¶</a></dt>
 <dd><p>Print an not so important informative message</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ui</span><span class="o">.</span><span class="n">info_2</span><span class="p">(</span><span class="s2">&quot;Message&quot;</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">cli_ui</span><span class="o">.</span><span class="n">info_2</span><span class="p">(</span><span class="s2">&quot;Message&quot;</span><span class="p">)</span>
 <span class="go">=&gt; Message</span>
 </pre></div>
 </div>
 </dd></dl>
 
 <dl class="function">
-<dt id="ui.info_3">
-<code class="descclassname">ui.</code><code class="descname">info_3</code><span class="sig-paren">(</span><em>*tokens</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ui.info_3" title="Permalink to this definition">¶</a></dt>
+<dt id="cli_ui.info_3">
+<code class="descclassname">cli_ui.</code><code class="descname">info_3</code><span class="sig-paren">(</span><em>*tokens</em>, <em>**kwargs</em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#cli_ui.info_3" title="Permalink to this definition">¶</a></dt>
 <dd><p>Print an even less important informative message</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ui</span><span class="o">.</span><span class="n">info_3</span><span class="p">(</span><span class="s2">&quot;Message&quot;</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">cli_ui</span><span class="o">.</span><span class="n">info_3</span><span class="p">(</span><span class="s2">&quot;Message&quot;</span><span class="p">)</span>
 <span class="go">* Message</span>
 </pre></div>
 </div>
 </dd></dl>
 
 <dl class="function">
-<dt id="ui.debug">
-<code class="descclassname">ui.</code><code class="descname">debug</code><span class="sig-paren">(</span><em>*tokens</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ui.debug" title="Permalink to this definition">¶</a></dt>
+<dt id="cli_ui.debug">
+<code class="descclassname">cli_ui.</code><code class="descname">debug</code><span class="sig-paren">(</span><em>*tokens</em>, <em>**kwargs</em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#cli_ui.debug" title="Permalink to this definition">¶</a></dt>
 <dd><p>Print a debug message.</p>
 <p>Messages are shown only when <code class="docutils literal notranslate"><span class="pre">CONFIG[&quot;verbose&quot;]</span></code> is true</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ui</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;Message&quot;</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">cli_ui</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;Message&quot;</span><span class="p">)</span>
 <span class="go">&lt;nothing&gt;</span>
 </pre></div>
 </div>
@@ -244,33 +263,33 @@ By default (‘auto’), only use color when output is a terminal.</li>
 
 </div>
 <div class="section" id="error-messages">
-<h3>Error messages<a class="headerlink" href="#error-messages" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id7">Error messages</a><a class="headerlink" href="#error-messages" title="Permalink to this headline">¶</a></h3>
 <p>Functions below use <code class="docutils literal notranslate"><span class="pre">sys.stderr</span></code> by default:</p>
 <dl class="function">
-<dt id="ui.error">
-<code class="descclassname">ui.</code><code class="descname">error</code><span class="sig-paren">(</span><em>*tokens</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ui.error" title="Permalink to this definition">¶</a></dt>
+<dt id="cli_ui.error">
+<code class="descclassname">cli_ui.</code><code class="descname">error</code><span class="sig-paren">(</span><em>*tokens</em>, <em>**kwargs</em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#cli_ui.error" title="Permalink to this definition">¶</a></dt>
 <dd><p>Print an error message</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ui</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s2">&quot;Message&quot;</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">cli_ui</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s2">&quot;Message&quot;</span><span class="p">)</span>
 <span class="go">Error: message</span>
 </pre></div>
 </div>
 </dd></dl>
 
 <dl class="function">
-<dt id="ui.warning">
-<code class="descclassname">ui.</code><code class="descname">warning</code><span class="sig-paren">(</span><em>*tokens</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ui.warning" title="Permalink to this definition">¶</a></dt>
+<dt id="cli_ui.warning">
+<code class="descclassname">cli_ui.</code><code class="descname">warning</code><span class="sig-paren">(</span><em>*tokens</em>, <em>**kwargs</em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#cli_ui.warning" title="Permalink to this definition">¶</a></dt>
 <dd><p>Print a warning message</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ui</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s2">&quot;Message&quot;</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">cli_ui</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s2">&quot;Message&quot;</span><span class="p">)</span>
 <span class="go">Warning: message</span>
 </pre></div>
 </div>
 </dd></dl>
 
 <dl class="function">
-<dt id="ui.fatal">
-<code class="descclassname">ui.</code><code class="descname">fatal</code><span class="sig-paren">(</span><em>*tokens</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ui.fatal" title="Permalink to this definition">¶</a></dt>
+<dt id="cli_ui.fatal">
+<code class="descclassname">cli_ui.</code><code class="descname">fatal</code><span class="sig-paren">(</span><em>*tokens</em>, <em>**kwargs</em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#cli_ui.fatal" title="Permalink to this definition">¶</a></dt>
 <dd><p>Print an error message and call <code class="docutils literal notranslate"><span class="pre">sys.exit</span></code></p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ui</span><span class="o">.</span><span class="n">fatal</span><span class="p">(</span><span class="s2">&quot;Message&quot;</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">cli_ui</span><span class="o">.</span><span class="n">fatal</span><span class="p">(</span><span class="s2">&quot;Message&quot;</span><span class="p">)</span>
 <span class="go">Error: message</span>
 <span class="go">exit()</span>
 </pre></div>
@@ -279,10 +298,10 @@ By default (‘auto’), only use color when output is a terminal.</li>
 
 </div>
 <div class="section" id="progress-messages">
-<h3>Progress messages<a class="headerlink" href="#progress-messages" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id8">Progress messages</a><a class="headerlink" href="#progress-messages" title="Permalink to this headline">¶</a></h3>
 <dl class="function">
-<dt id="ui.dot">
-<code class="descclassname">ui.</code><code class="descname">dot</code><span class="sig-paren">(</span><em>*</em>, <em>last=False</em>, <em>fileobj=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ui.dot" title="Permalink to this definition">¶</a></dt>
+<dt id="cli_ui.dot">
+<code class="descclassname">cli_ui.</code><code class="descname">dot</code><span class="sig-paren">(</span><em>*</em>, <em>last: bool = False</em>, <em>fileobj: Any = None</em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#cli_ui.dot" title="Permalink to this definition">¶</a></dt>
 <dd><p>Print a dot without a newline unless it is the last one.</p>
 <p>Useful when you want to display a progress with very little
 knowledge.</p>
@@ -295,19 +314,19 @@ knowledge.</p>
 </tbody>
 </table>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="ow">in</span> <span class="ow">in</span> <span class="n">rang</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">):</span>
-<span class="gp">&gt;&gt;&gt; </span>    <span class="n">ui</span><span class="o">.</span><span class="n">dot</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span>    <span class="n">cli_ui</span><span class="o">.</span><span class="n">dot</span><span class="p">()</span>
 <span class="go">....&lt;no newline&gt;</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">ui</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">last</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cli_ui</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">last</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="go">.....</span>
 </pre></div>
 </div>
 </dd></dl>
 
 <dl class="function">
-<dt id="ui.info_count">
-<code class="descclassname">ui.</code><code class="descname">info_count</code><span class="sig-paren">(</span><em>i</em>, <em>n</em>, <em>*rest</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ui.info_count" title="Permalink to this definition">¶</a></dt>
+<dt id="cli_ui.info_count">
+<code class="descclassname">cli_ui.</code><code class="descname">info_count</code><span class="sig-paren">(</span><em>i: int</em>, <em>n: int</em>, <em>*rest</em>, <em>**kwargs</em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#cli_ui.info_count" title="Permalink to this definition">¶</a></dt>
 <dd><p>Display a counter before the rest of the message.</p>
-<p><code class="docutils literal notranslate"><span class="pre">rest</span></code> and <code class="docutils literal notranslate"><span class="pre">kwargs</span></code> are passed to <a class="reference internal" href="#ui.info" title="ui.info"><code class="xref py py-func docutils literal notranslate"><span class="pre">info()</span></code></a></p>
+<p><code class="docutils literal notranslate"><span class="pre">rest</span></code> and <code class="docutils literal notranslate"><span class="pre">kwargs</span></code> are passed to <a class="reference internal" href="#cli_ui.info" title="cli_ui.info"><code class="xref py py-func docutils literal notranslate"><span class="pre">info()</span></code></a></p>
 <p>Current index should start at 0 and end at <code class="docutils literal notranslate"><span class="pre">n-1</span></code>, like in <code class="docutils literal notranslate"><span class="pre">enumerate()</span></code></p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -321,15 +340,15 @@ knowledge.</p>
 </tr>
 </tbody>
 </table>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ui</span><span class="o">.</span><span class="n">info_count</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="n">message</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">cli_ui</span><span class="o">.</span><span class="n">info_count</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="n">message</span><span class="p">)</span>
 <span class="go">* ( 5/12) message</span>
 </pre></div>
 </div>
 </dd></dl>
 
 <dl class="function">
-<dt id="ui.info_progress">
-<code class="descclassname">ui.</code><code class="descname">info_progress</code><span class="sig-paren">(</span><em>prefix</em>, <em>value</em>, <em>max_value</em><span class="sig-paren">)</span><a class="headerlink" href="#ui.info_progress" title="Permalink to this definition">¶</a></dt>
+<dt id="cli_ui.info_progress">
+<code class="descclassname">cli_ui.</code><code class="descname">info_progress</code><span class="sig-paren">(</span><em>prefix: str</em>, <em>value: float</em>, <em>max_value: float</em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#cli_ui.info_progress" title="Permalink to this definition">¶</a></dt>
 <dd><p>Display info progress in percent.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -344,7 +363,7 @@ knowledge.</p>
 </tr>
 </tbody>
 </table>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ui</span><span class="o">.</span><span class="n">info_progress</span><span class="p">(</span><span class="s2">&quot;Done&quot;</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">cli_ui</span><span class="o">.</span><span class="n">info_progress</span><span class="p">(</span><span class="s2">&quot;Done&quot;</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
 <span class="go">Done: 25%</span>
 </pre></div>
 </div>
@@ -352,14 +371,14 @@ knowledge.</p>
 
 </div>
 <div class="section" id="formatting">
-<h3>Formatting<a class="headerlink" href="#formatting" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id9">Formatting</a><a class="headerlink" href="#formatting" title="Permalink to this headline">¶</a></h3>
 <dl class="function">
-<dt id="ui.tabs">
-<code class="descclassname">ui.</code><code class="descname">tabs</code><span class="sig-paren">(</span><em>num</em><span class="sig-paren">)</span><a class="headerlink" href="#ui.tabs" title="Permalink to this definition">¶</a></dt>
+<dt id="cli_ui.tabs">
+<code class="descclassname">cli_ui.</code><code class="descname">tabs</code><span class="sig-paren">(</span><em>num: int</em><span class="sig-paren">)</span> &#x2192; str<a class="headerlink" href="#cli_ui.tabs" title="Permalink to this definition">¶</a></dt>
 <dd><p>Compute a blank tab</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ui</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;one&quot;</span><span class="p">,</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span>
-<span class="go">            ui.tabs(1), &quot;two&quot;, &quot;\n&quot;,</span>
-<span class="go">            ui.tabs(2), &quot;three&quot;, &quot;\n&quot;,</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">cli_ui</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;one&quot;</span><span class="p">,</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span>
+<span class="go">            cli_ui.tabs(1), &quot;two&quot;, &quot;\n&quot;,</span>
+<span class="go">            cli_ui.tabs(2), &quot;three&quot;, &quot;\n&quot;,</span>
 <span class="go">            sep=&quot;&quot;)</span>
 <span class="go">one</span>
 <span class="go">  two</span>
@@ -369,14 +388,14 @@ knowledge.</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="ui.indent">
-<code class="descclassname">ui.</code><code class="descname">indent</code><span class="sig-paren">(</span><em>text</em>, <em>num=2</em><span class="sig-paren">)</span><a class="headerlink" href="#ui.indent" title="Permalink to this definition">¶</a></dt>
+<dt id="cli_ui.indent">
+<code class="descclassname">cli_ui.</code><code class="descname">indent</code><span class="sig-paren">(</span><em>text: str</em>, <em>num: int = 2</em><span class="sig-paren">)</span> &#x2192; str<a class="headerlink" href="#cli_ui.indent" title="Permalink to this definition">¶</a></dt>
 <dd><p>Indent a piece of text.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">quote</span> <span class="o">=</span> <span class="p">(</span>
 <span class="go">      &quot;First, we take Manhattan\n&quot;</span>
 <span class="go">      &quot;Then we take Berlin!&quot;</span>
 <span class="go">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">ui</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;John said:&quot;</span><span class="p">,</span> <span class="n">ui</span><span class="o">.</span><span class="n">indent</span><span class="p">(</span><span class="n">quote</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cli_ui</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;John said:&quot;</span><span class="p">,</span> <span class="n">cli_ui</span><span class="o">.</span><span class="n">indent</span><span class="p">(</span><span class="n">quote</span><span class="p">))</span>
 <span class="go">John said:</span>
 <span class="go">   First, we take Manhattan.</span>
 <span class="go">   Then we take Berlin!</span>
@@ -385,15 +404,15 @@ knowledge.</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="ui.info_table">
-<code class="descclassname">ui.</code><code class="descname">info_table</code><span class="sig-paren">(</span><em>data</em>, <em>*</em>, <em>headers=None</em>, <em>fileobj=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ui.info_table" title="Permalink to this definition">¶</a></dt>
+<dt id="cli_ui.info_table">
+<code class="descclassname">cli_ui.</code><code class="descname">info_table</code><span class="sig-paren">(</span><em>data: Any</em>, <em>*</em>, <em>headers: Optional[List[str]] = None</em>, <em>fileobj: Any = None</em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#cli_ui.info_table" title="Permalink to this definition">¶</a></dt>
 <dd><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">headers</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">,</span> <span class="s2">&quot;score&quot;</span><span class="p">]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">data</span> <span class="o">=</span> <span class="p">[</span>
 <span class="go">      [(bold, &quot;John&quot;), (green, 10.0)],</span>
 <span class="go">      [(bold, &quot;Jane&quot;), (green, 5.0)],</span>
 <span class="go">    ]</span>
 
-<span class="gp">&gt;&gt;&gt; </span><span class="n">ui</span><span class="o">.</span><span class="n">info_table</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cli_ui</span><span class="o">.</span><span class="n">info_table</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
 <span class="go">name      score</span>
 <span class="go">--------  --------</span>
 <span class="go">John       10.0</span>
@@ -404,18 +423,18 @@ knowledge.</p>
 
 </div>
 <div class="section" id="asking-for-user-input">
-<h3>Asking for user input<a class="headerlink" href="#asking-for-user-input" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id10">Asking for user input</a><a class="headerlink" href="#asking-for-user-input" title="Permalink to this headline">¶</a></h3>
 <dl class="function">
-<dt id="ui.read_input">
-<code class="descclassname">ui.</code><code class="descname">read_input</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ui.read_input" title="Permalink to this definition">¶</a></dt>
+<dt id="cli_ui.read_input">
+<code class="descclassname">cli_ui.</code><code class="descname">read_input</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; str<a class="headerlink" href="#cli_ui.read_input" title="Permalink to this definition">¶</a></dt>
 <dd><p>Read input from the user</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="ui.ask_string">
-<code class="descclassname">ui.</code><code class="descname">ask_string</code><span class="sig-paren">(</span><em>question</em>, <em>default=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ui.ask_string" title="Permalink to this definition">¶</a></dt>
+<dt id="cli_ui.ask_string">
+<code class="descclassname">cli_ui.</code><code class="descname">ask_string</code><span class="sig-paren">(</span><em>*question</em>, <em>default: Optional[str] = None</em><span class="sig-paren">)</span> &#x2192; Optional[str]<a class="headerlink" href="#cli_ui.ask_string" title="Permalink to this definition">¶</a></dt>
 <dd><p>Ask the user to enter a string.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">name</span> <span class="o">=</span> <span class="n">ui</span><span class="o">.</span><span class="n">ask_string</span><span class="p">(</span><span class="s2">&quot;Enter your name&quot;</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">name</span> <span class="o">=</span> <span class="n">cli_ui</span><span class="o">.</span><span class="n">ask_string</span><span class="p">(</span><span class="s2">&quot;Enter your name&quot;</span><span class="p">)</span>
 <span class="go">:: Enter your name</span>
 <span class="go">&lt;john&gt;</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">name</span>
@@ -425,8 +444,8 @@ knowledge.</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="ui.ask_choice">
-<code class="descclassname">ui.</code><code class="descname">ask_choice</code><span class="sig-paren">(</span><em>input_text</em>, <em>choices</em>, <em>*</em>, <em>func_desc=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ui.ask_choice" title="Permalink to this definition">¶</a></dt>
+<dt id="cli_ui.ask_choice">
+<code class="descclassname">cli_ui.</code><code class="descname">ask_choice</code><span class="sig-paren">(</span><em>*prompt, choices: List[Any], func_desc: Optional[Callable[Any, str]] = None</em><span class="sig-paren">)</span> &#x2192; Any<a class="headerlink" href="#cli_ui.ask_choice" title="Permalink to this definition">¶</a></dt>
 <dd><p>Ask the user to choose from a list of choices.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -450,7 +469,7 @@ the identity function.</p>
 </dl>
 <p>In the last two cases, None will be returned</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">choices</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;apple&quot;</span><span class="p">,</span> <span class="s2">&quot;banana&quot;</span><span class="p">,</span> <span class="s2">&quot;orange&quot;</span><span class="p">]</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">fruit</span> <span class="o">=</span> <span class="n">ui</span><span class="o">.</span><span class="n">ask_choice</span><span class="p">(</span><span class="s2">&quot;Select a fruit&quot;</span><span class="p">,</span> <span class="n">choices</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">fruit</span> <span class="o">=</span> <span class="n">cli_ui</span><span class="o">.</span><span class="n">ask_choice</span><span class="p">(</span><span class="s2">&quot;Select a fruit&quot;</span><span class="p">,</span> <span class="n">choices</span><span class="o">=</span><span class="n">choices</span><span class="p">)</span>
 <span class="go">:: Select a fruit</span>
 <span class="go">  1 apple</span>
 <span class="go">  2 banana</span>
@@ -460,13 +479,16 @@ the identity function.</p>
 <span class="go">&#39;banana&#39;</span>
 </pre></div>
 </div>
+<div class="versionchanged">
+<p><span class="versionmodified">Changed in version 0.8: </span><code class="docutils literal notranslate"><span class="pre">choices</span></code> is now a named keyword argument</p>
+</div>
 </dd></dl>
 
 <dl class="function">
-<dt id="ui.ask_yes_no">
-<code class="descclassname">ui.</code><code class="descname">ask_yes_no</code><span class="sig-paren">(</span><em>question</em>, <em>default=False</em><span class="sig-paren">)</span><a class="headerlink" href="#ui.ask_yes_no" title="Permalink to this definition">¶</a></dt>
+<dt id="cli_ui.ask_yes_no">
+<code class="descclassname">cli_ui.</code><code class="descname">ask_yes_no</code><span class="sig-paren">(</span><em>*question</em>, <em>default: bool = False</em><span class="sig-paren">)</span> &#x2192; bool<a class="headerlink" href="#cli_ui.ask_yes_no" title="Permalink to this definition">¶</a></dt>
 <dd><p>Ask the user to answer by yes or no</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">with_cream</span> <span class="o">=</span> <span class="n">ui</span><span class="o">.</span><span class="n">ask_yes_no</span><span class="p">(</span><span class="s2">&quot;With cream?&quot;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">with_cream</span> <span class="o">=</span> <span class="n">cli_ui</span><span class="o">.</span><span class="n">ask_yes_no</span><span class="p">(</span><span class="s2">&quot;With cream?&quot;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 <span class="go">:: With cream? (y/N)</span>
 <span class="go">&lt;y&gt;</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">with_cream</span>
@@ -476,17 +498,18 @@ the identity function.</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="ui.read_password">
-<code class="descclassname">ui.</code><code class="descname">read_password</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ui.read_password" title="Permalink to this definition">¶</a></dt>
+<dt id="cli_ui.read_password">
+<code class="descclassname">cli_ui.</code><code class="descname">read_password</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; str<a class="headerlink" href="#cli_ui.read_password" title="Permalink to this definition">¶</a></dt>
 <dd><p>Read a password from the user</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="ui.ask_password">
-<code class="descclassname">ui.</code><code class="descname">ask_password</code><span class="sig-paren">(</span><em>question</em><span class="sig-paren">)</span><a class="headerlink" href="#ui.ask_password" title="Permalink to this definition">¶</a></dt>
+<dt id="cli_ui.ask_password">
+<code class="descclassname">cli_ui.</code><code class="descname">ask_password</code><span class="sig-paren">(</span><em>*question</em><span class="sig-paren">)</span> &#x2192; str<a class="headerlink" href="#cli_ui.ask_password" title="Permalink to this definition">¶</a></dt>
 <dd><p>Ask the user to enter a password.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">fav_food</span> <span class="o">=</span> <span class="n">ui</span><span class="o">.</span><span class="n">ask_password</span><span class="p">(</span><span class="s2">&quot;Guilty pleasure?&quot;</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">fav_food</span> <span class="o">=</span> <span class="n">cli_ui</span><span class="o">.</span><span class="n">ask_password</span><span class="p">(</span><span class="s2">&quot;Guilty pleasure?&quot;</span><span class="p">)</span>
 <span class="go">:: Guilty pleasure?</span>
+<span class="go">****</span>
 
 <span class="gp">&gt;&gt;&gt; </span><span class="n">fav_food</span>
 <span class="go">&#39;chocolate&#39;</span>
@@ -496,17 +519,17 @@ the identity function.</p>
 
 </div>
 <div class="section" id="displaying-duration">
-<h3>Displaying duration<a class="headerlink" href="#displaying-duration" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id11">Displaying duration</a><a class="headerlink" href="#displaying-duration" title="Permalink to this headline">¶</a></h3>
 <dl class="class">
-<dt id="ui.Timer">
-<em class="property">class </em><code class="descclassname">ui.</code><code class="descname">Timer</code><span class="sig-paren">(</span><em>description</em><span class="sig-paren">)</span><a class="headerlink" href="#ui.Timer" title="Permalink to this definition">¶</a></dt>
+<dt id="cli_ui.Timer">
+<em class="property">class </em><code class="descclassname">cli_ui.</code><code class="descname">Timer</code><span class="sig-paren">(</span><em>description: str</em><span class="sig-paren">)</span><a class="headerlink" href="#cli_ui.Timer" title="Permalink to this definition">¶</a></dt>
 <dd><p>Display time taken when executing a list of statements.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nd">@ui</span><span class="o">.</span><span class="n">Timer</span><span class="p">(</span><span class="s2">&quot;something&quot;</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nd">@cli_ui</span><span class="o">.</span><span class="n">Timer</span><span class="p">(</span><span class="s2">&quot;something&quot;</span><span class="p">)</span>
 <span class="go">    def do_something():</span>
 <span class="go">         foo()</span>
 <span class="go">         bar()</span>
 <span class="go"># Or:</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="k">with</span> <span class="n">ui</span><span class="o">.</span><span class="n">Timer</span><span class="p">(</span><span class="s2">&quot;something&quot;</span><span class="p">):</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">with</span> <span class="n">cli_ui</span><span class="o">.</span><span class="n">Timer</span><span class="p">(</span><span class="s2">&quot;something&quot;</span><span class="p">):</span>
 <span class="go">        foo()</span>
 <span class="go">        bar()</span>
 <span class="go">* Something took 0h 3m 10s 430ms</span>
@@ -516,17 +539,17 @@ the identity function.</p>
 
 </div>
 <div class="section" id="auto-correct">
-<h3>Auto-correct<a class="headerlink" href="#auto-correct" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id12">Auto-correct</a><a class="headerlink" href="#auto-correct" title="Permalink to this headline">¶</a></h3>
 <dl class="function">
-<dt id="ui.did_you_mean">
-<code class="descclassname">ui.</code><code class="descname">did_you_mean</code><span class="sig-paren">(</span><em>message</em>, <em>user_input</em>, <em>choices</em><span class="sig-paren">)</span><a class="headerlink" href="#ui.did_you_mean" title="Permalink to this definition">¶</a></dt>
+<dt id="cli_ui.did_you_mean">
+<code class="descclassname">cli_ui.</code><code class="descname">did_you_mean</code><span class="sig-paren">(</span><em>message: str, user_input: str, choices: Sequence[str]</em><span class="sig-paren">)</span> &#x2192; str<a class="headerlink" href="#cli_ui.did_you_mean" title="Permalink to this definition">¶</a></dt>
 <dd><p>Given a list of choices and an invalid user input, display the closest
 items in the list that match the input.</p>
 <blockquote>
 <div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">allowed_names</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Alice&quot;</span><span class="p">,</span> <span class="s2">&quot;John&quot;</span><span class="p">,</span> <span class="s2">&quot;Bob&quot;</span><span class="p">]</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">name</span> <span class="o">=</span> <span class="n">ui</span><span class="o">.</span><span class="n">ask_string</span><span class="p">(</span><span class="s2">&quot;Enter a name&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">name</span> <span class="o">=</span> <span class="n">cli_ui</span><span class="o">.</span><span class="n">ask_string</span><span class="p">(</span><span class="s2">&quot;Enter a name&quot;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="k">if</span> <span class="ow">not</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">allowed_names</span><span class="p">:</span>
-<span class="gp">&gt;&gt;&gt; </span>      <span class="n">ui</span><span class="o">.</span><span class="n">did_you_mean</span><span class="p">(</span><span class="s2">&quot;Invalid name&quot;</span><span class="p">,</span> <span class="n">user_input</span><span class="p">,</span> <span class="n">choices</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span>      <span class="n">cli_ui</span><span class="o">.</span><span class="n">did_you_mean</span><span class="p">(</span><span class="s2">&quot;Invalid name&quot;</span><span class="p">,</span> <span class="n">user_input</span><span class="p">,</span> <span class="n">choices</span><span class="p">)</span>
 <span class="go">:: Enter a name</span>
 <span class="go">&lt;Joohn&gt;</span>
 <span class="go">Invalid name.</span>
@@ -535,122 +558,76 @@ items in the list that match the input.</p>
 </div>
 </div></blockquote>
 <p>Note: if the list of possible choices is short, consider using
-<a class="reference internal" href="#ui.ask_choice" title="ui.ask_choice"><code class="xref py py-func docutils literal notranslate"><span class="pre">ask_choice()</span></code></a> instead.</p>
+<a class="reference internal" href="#cli_ui.ask_choice" title="cli_ui.ask_choice"><code class="xref py py-func docutils literal notranslate"><span class="pre">ask_choice()</span></code></a> instead.</p>
 </dd></dl>
 
 </div>
-<div class="section" id="testing-with-pytest">
-<span id="pytest"></span><h3>Testing with pytest<a class="headerlink" href="#testing-with-pytest" title="Permalink to this headline">¶</a></h3>
-<dl class="function">
-<dt id="ui.tests.conftest.message_recorder">
-<code class="descclassname">ui.tests.conftest.</code><code class="descname">message_recorder</code><span class="sig-paren">(</span><em>request</em><span class="sig-paren">)</span><a class="headerlink" href="#ui.tests.conftest.message_recorder" title="Permalink to this definition">¶</a></dt>
-<dd><p>Start recording messages</p>
-<p><em>Methods</em></p>
-<ul class="simple">
-<li><cite>stop()</cite>: stop recording</li>
-<li><cite>reset()</cite>: clear the list of recorded messages.</li>
-<li><dl class="first docutils">
-<dt><cite>find(regex)</cite> find a message in the list matching the given regular</dt>
-<dd>expression</dd>
-</dl>
-</li>
-</ul>
+<div class="section" id="testing">
+<h3><a class="toc-backref" href="#id13">Testing</a><a class="headerlink" href="#testing" title="Permalink to this headline">¶</a></h3>
+<dl class="class">
+<dt id="cli_ui.tests.MessageRecorder">
+<em class="property">class </em><code class="descclassname">cli_ui.tests.</code><code class="descname">MessageRecorder</code><a class="headerlink" href="#cli_ui.tests.MessageRecorder" title="Permalink to this definition">¶</a></dt>
+<dd><p>Helper class to tests emitted messages</p>
+<dl class="method">
+<dt id="cli_ui.tests.MessageRecorder.find">
+<code class="descname">find</code><span class="sig-paren">(</span><em>pattern: str</em><span class="sig-paren">)</span> &#x2192; Optional[str]<a class="headerlink" href="#cli_ui.tests.MessageRecorder.find" title="Permalink to this definition">¶</a></dt>
+<dd><p>Find a message in the list of recorded message</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>pattern</strong> – regular expression pattern to use
+when looking for recorded message</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ui.tests.conftest</span> <span class="k">import</span> <span class="n">message_recorder</span>
+<dl class="method">
+<dt id="cli_ui.tests.MessageRecorder.reset">
+<code class="descname">reset</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#cli_ui.tests.MessageRecorder.reset" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reset the list</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="cli_ui.tests.MessageRecorder.start">
+<code class="descname">start</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#cli_ui.tests.MessageRecorder.start" title="Permalink to this definition">¶</a></dt>
+<dd><p>Start recording messages</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="cli_ui.tests.MessageRecorder.stop">
+<code class="descname">stop</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#cli_ui.tests.MessageRecorder.stop" title="Permalink to this definition">¶</a></dt>
+<dd><p>Stop recording messages</p>
+</dd></dl>
+
+</dd></dl>
+
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example with pytest</span>
+
+<span class="c1"># in conftest.py</span>
+<span class="kn">from</span> <span class="nn">cli_ui.tests</span> <span class="k">import</span> <span class="n">MessageRecorder</span>
+<span class="kn">import</span> <span class="nn">pytest</span>
+
+<span class="nd">@pytest</span><span class="o">.</span><span class="n">fixture</span><span class="p">()</span>
+<span class="k">def</span> <span class="nf">message_recorder</span><span class="p">():</span>
+    <span class="n">message_recorder</span> <span class="o">=</span> <span class="n">MessageRecorder</span><span class="p">()</span>
+    <span class="n">message_recorder</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+    <span class="k">yield</span> <span class="n">message_recorder</span>
+    <span class="n">message_recorder</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span>
 
 
+<span class="c1"># in foo.py</span>
 <span class="k">def</span> <span class="nf">foo</span><span class="p">():</span>
-    <span class="n">ui</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Fooing&quot;</span><span class="p">)</span>
+    <span class="n">cli_ui</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Fooing&quot;</span><span class="p">)</span>
 
 
+<span class="c1"># in test_foo.py</span>
 <span class="k">def</span> <span class="nf">test_foo</span><span class="p">(</span><span class="n">message_recorder</span><span class="p">):</span>
      <span class="n">foo</span><span class="p">()</span>
      <span class="k">assert</span> <span class="n">message_recorder</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;Fooing&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-</div>
-<div class="section" id="changelog">
-<h2>Changelog<a class="headerlink" href="#changelog" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="v0-7-4">
-<h3>v0.7.4<a class="headerlink" href="#v0-7-4" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li>Remove buggy <code class="docutils literal notranslate"><span class="pre">entry_points</span></code> from <code class="docutils literal notranslate"><span class="pre">setup.py</span></code>.</li>
-</ul>
-</div>
-<div class="section" id="v0-7-3">
-<h3>v0.7.3<a class="headerlink" href="#v0-7-3" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li>Switch to <code class="docutils literal notranslate"><span class="pre">dmenv</span></code>. This makes it possible to use <code class="docutils literal notranslate"><span class="pre">python-cli-ui</span></code> with <code class="docutils literal notranslate"><span class="pre">colorama</span> <span class="pre">&gt;=</span> <span class="pre">4.0</span></code>.</li>
-</ul>
-</div>
-<div class="section" id="v0-7-2">
-<h3>v0.7.2<a class="headerlink" href="#v0-7-2" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li>Switch to <a class="reference external" href="https://poetry.eustace.io">poetry</a> .</li>
-</ul>
-</div>
-<div class="section" id="v0-7-1">
-<h3>v0.7.1<a class="headerlink" href="#v0-7-1" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li>Fix crash in <code class="docutils literal notranslate"><span class="pre">ask_password</span></code> when password was empty.</li>
-<li>Let the <code class="docutils literal notranslate"><span class="pre">KeyboardInterrput</span></code> exception propagate back to the caller instead of catching
-it ourselves and returning <code class="docutils literal notranslate"><span class="pre">None</span></code>. Reported by Théo Delrieu.</li>
-</ul>
-</div>
-<div class="section" id="v0-7-0">
-<h3>v0.7.0<a class="headerlink" href="#v0-7-0" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li>Add <code class="docutils literal notranslate"><span class="pre">ask_password</span></code> and <code class="docutils literal notranslate"><span class="pre">read_pasword</span></code>. Patch by &#64;drazisil</li>
-</ul>
-</div>
-<div class="section" id="v0-6-1">
-<h3>v0.6.1<a class="headerlink" href="#v0-6-1" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li>Fix metadata (owner moved from TankerApp to TankerHQ)</li>
-</ul>
-</div>
-<div class="section" id="v0-6-0">
-<h3>v0.6.0<a class="headerlink" href="#v0-6-0" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li>Export <code class="docutils literal notranslate"><span class="pre">Color</span></code> class.</li>
-</ul>
-</div>
-<div class="section" id="v0-5-0">
-<h3>v0.5.0<a class="headerlink" href="#v0-5-0" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li>Export a <code class="docutils literal notranslate"><span class="pre">Symbol</span></code> class, to use when you do not want to force
-color as  with <code class="docutils literal notranslate"><span class="pre">UnicodeSequence</span></code></li>
-</ul>
-</div>
-<div class="section" id="v0-4-0">
-<h3>v0.4.0<a class="headerlink" href="#v0-4-0" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li>Expose the previously private <code class="docutils literal notranslate"><span class="pre">UnicodeSequence</span></code> class.</li>
-</ul>
-</div>
-<div class="section" id="v0-3-0">
-<h3>v0.3.0<a class="headerlink" href="#v0-3-0" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li>Add <code class="docutils literal notranslate"><span class="pre">info_section</span></code></li>
-<li>Cosmetic changes about prefixes for <code class="docutils literal notranslate"><span class="pre">debug</span></code>, <code class="docutils literal notranslate"><span class="pre">warn</span></code> and <code class="docutils literal notranslate"><span class="pre">error</span></code>
-messages. (See <a class="reference external" href="https://github.com/TankerHQ/python-cli-ui/pull/6">#6</a>
-for the details)</li>
-</ul>
-</div>
-<div class="section" id="v0-2-0">
-<h3>v0.2.0<a class="headerlink" href="#v0-2-0" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li>Add <code class="docutils literal notranslate"><span class="pre">ui.setup</span></code> to configure things like verbosity and when to
-use colored output (#3)</li>
-<li>Add a <code class="docutils literal notranslate"><span class="pre">message_recorder</span></code> in <code class="docutils literal notranslate"><span class="pre">ui.tests.conf</span></code> that can
-be used as a <code class="docutils literal notranslate"><span class="pre">pytest</span></code> fixture in other projects.</li>
-</ul>
-</div>
-<div class="section" id="v0-1-0">
-<h3>v0.1.0<a class="headerlink" href="#v0-1-0" title="Permalink to this headline">¶</a></h3>
-<p>First public release.</p>
 </div>
 </div>
 </div>
@@ -662,7 +639,7 @@ be used as a <code class="docutils literal notranslate"><span class="pre">pytest
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-<h1 class="logo"><a href="#">python-cli-ui</a></h1>
+<h1 class="logo"><a href="#">cli_ui</a></h1>
 
 
 
@@ -672,11 +649,15 @@ be used as a <code class="docutils literal notranslate"><span class="pre">pytest
 
 
 <h3>Navigation</h3>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a></li>
+</ul>
 
 <div class="relations">
 <h3>Related Topics</h3>
 <ul>
   <li><a href="#">Documentation overview</a><ul>
+      <li>Next: <a href="changelog.html" title="next chapter">Changelog</a></li>
   </ul></li>
 </ul>
 </div>
@@ -708,7 +689,7 @@ be used as a <code class="docutils literal notranslate"><span class="pre">pytest
       &copy;2017, Kontrol SAS.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.1</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.2</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
     </div>
