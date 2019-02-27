@@ -313,7 +313,7 @@ knowledge.</p>
 </tr>
 </tbody>
 </table>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="ow">in</span> <span class="ow">in</span> <span class="n">rang</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">):</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="ow">in</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">):</span>
 <span class="gp">&gt;&gt;&gt; </span>    <span class="n">cli_ui</span><span class="o">.</span><span class="n">dot</span><span class="p">()</span>
 <span class="go">....&lt;no newline&gt;</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">cli_ui</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">last</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -445,7 +445,7 @@ knowledge.</p>
 
 <dl class="function">
 <dt id="cli_ui.ask_choice">
-<code class="descclassname">cli_ui.</code><code class="descname">ask_choice</code><span class="sig-paren">(</span><em>*prompt, choices: List[Any], func_desc: Optional[Callable[Any, str]] = None</em><span class="sig-paren">)</span> &#x2192; Any<a class="headerlink" href="#cli_ui.ask_choice" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">cli_ui.</code><code class="descname">ask_choice</code><span class="sig-paren">(</span><em>*prompt, choices: List[Any], func_desc: Optional[Callable[[Any], str]] = None</em><span class="sig-paren">)</span> &#x2192; Any<a class="headerlink" href="#cli_ui.ask_choice" title="Permalink to this definition">¶</a></dt>
 <dd><p>Ask the user to choose from a list of choices.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -462,12 +462,11 @@ the identity function.</p>
 <dt>Will loop until:</dt>
 <dd><ul class="first last simple">
 <li>the user enters a valid index</li>
-<li>or hits <code class="docutils literal notranslate"><span class="pre">ctrl-c</span></code></li>
 <li>or leaves the prompt empty</li>
 </ul>
 </dd>
 </dl>
-<p>In the last two cases, None will be returned</p>
+<p>In the last case, None will be returned</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">choices</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;apple&quot;</span><span class="p">,</span> <span class="s2">&quot;banana&quot;</span><span class="p">,</span> <span class="s2">&quot;orange&quot;</span><span class="p">]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">fruit</span> <span class="o">=</span> <span class="n">cli_ui</span><span class="o">.</span><span class="n">ask_choice</span><span class="p">(</span><span class="s2">&quot;Select a fruit&quot;</span><span class="p">,</span> <span class="n">choices</span><span class="o">=</span><span class="n">choices</span><span class="p">)</span>
 <span class="go">:: Select a fruit</span>
@@ -481,6 +480,9 @@ the identity function.</p>
 </div>
 <div class="versionchanged">
 <p><span class="versionmodified">Changed in version 0.8: </span><code class="docutils literal notranslate"><span class="pre">choices</span></code> is now a named keyword argument</p>
+</div>
+<div class="versionchanged">
+<p><span class="versionmodified">Changed in version 0.7: </span>The <code class="xref py py-exc docutils literal notranslate"><span class="pre">KeyboardInterrupt</span></code> exception is no longer caught by this function.</p>
 </div>
 </dd></dl>
 
